@@ -4,6 +4,9 @@
 
 Welcome to MedPredict, an innovative platform dedicated to advancing maternal and fetal health through predictive analysis. MedPredict empowers healthcare professionals and users alike by providing accurate predictions and proactive risk management related to pregnancy.
 
+### Webapp URL
+MedPredict: [MedPredict link](https://maternalcare-cbupxflodo4uhz8hzqqqng.streamlit.app/)
+
 ## Key Features
 
 - **Pregnancy Risk Prediction:** Our Pregnancy Risk Prediction feature utilizes advanced algorithms to analyze various parameters, including age, body sugar levels, blood pressure, and more. By processing this information, we provide accurate predictions of potential risks during pregnancy.
