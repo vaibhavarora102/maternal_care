@@ -28,27 +28,29 @@ with st.sidebar:
                           default_index=0)
     
 if (selected == 'About us'):
+    
     st.title("Welcome to MedPredict")
     st.write("At MedPredict, our mission is to revolutionize healthcare by offering innovative solutions through predictive analysis. "
          "Our platform is specifically designed to address the intricate aspects of maternal and fetal health, providing accurate "
          "predictions and proactive risk management.")
     
-
-    # Section 1: Pregnancy Risk Prediction
-    st.header("1. Pregnancy Risk Prediction")
-    st.write("Our Pregnancy Risk Prediction feature utilizes advanced algorithms to analyze various parameters, including age, "
-            "body sugar levels, blood pressure, and more. By processing this information, we provide accurate predictions of "
-            "potential risks during pregnancy.")
-    # Add an image for Pregnancy Risk Prediction
-    st.image("graphics/pregnancy_risk_image.jpg", caption="Pregnancy Risk Prediction", use_column_width=True)
-
-    # Section 2: Fetal Health Prediction
-    st.header("2. Fetal Health Prediction")
-    st.write("Fetal Health Prediction is a crucial aspect of our system. We leverage cutting-edge technology to assess the "
-            "health status of the fetus. Through a comprehensive analysis of factors such as ultrasound data, maternal health, "
-            "and genetic factors, we deliver insights into the well-being of the unborn child.")
-    # Add an image for Fetal Health Prediction
-    st.image("graphics/fetal_health_image.jpg", caption="Fetal Health Prediction", use_column_width=True)
+    col1, col2= st.columns(2)
+    with col1:
+        # Section 1: Pregnancy Risk Prediction
+        st.header("1. Pregnancy Risk Prediction")
+        st.write("Our Pregnancy Risk Prediction feature utilizes advanced algorithms to analyze various parameters, including age, "
+                "body sugar levels, blood pressure, and more. By processing this information, we provide accurate predictions of "
+                "potential risks during pregnancy.")
+        # Add an image for Pregnancy Risk Prediction
+        st.image("graphics/pregnancy_risk_image.jpg", caption="Pregnancy Risk Prediction", use_column_width=True)
+    with col2:
+        # Section 2: Fetal Health Prediction
+        st.header("2. Fetal Health Prediction")
+        st.write("Fetal Health Prediction is a crucial aspect of our system. We leverage cutting-edge technology to assess the "
+                "health status of the fetus. Through a comprehensive analysis of factors such as ultrasound data, maternal health, "
+                "and genetic factors, we deliver insights into the well-being of the unborn child.")
+        # Add an image for Fetal Health Prediction
+        st.image("graphics/fetal_health_image.jpg", caption="Fetal Health Prediction", use_column_width=True)
 
     # Section 3: Dashboard
     st.header("3. Dashboard")
