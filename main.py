@@ -6,6 +6,7 @@ import pandas as pd
 import plotly.express as px
 from io import StringIO
 import requests
+from sklearn.preprocessing import StandardScaler
 
 from codebase.dashboard_graphs import MaternalHealthDashboard
 
@@ -86,7 +87,7 @@ if (selected == 'Pregnancy Risk Prediction'):
 
     with col2:
         heartRate = st.text_input('Heart rate in beats per minute')
-    
+    scale_X = StandardScaler()
     riskLevel=""
     predicted_risk = [0] 
     # creating a button for Prediction
@@ -94,7 +95,11 @@ if (selected == 'Pregnancy Risk Prediction'):
         if st.button('Predict Pregnancy Risk'):
             with warnings.catch_warnings():
                 warnings.simplefilter("ignore")
-                predicted_risk = maternal_model.predict([[age, diastolicBP, BS, bodyTemp, heartRate]])
+                #predicted_risk = maternal_model.predict([[age, diastolicBP, BS, bodyTemp, heartRate]])
+                input_data = np.array([[age, diastolicBP, BS, bodyTemp, heartRate]])
+        
+                input_scaled = scale_X.transform(input_data)
+                predicted_risk = maternal_model.predict(input_scaled)
             # st
             st.subheader("Risk Level:")
             if predicted_risk[0] == 0:
