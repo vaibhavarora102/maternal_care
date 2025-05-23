@@ -6,6 +6,7 @@ import pandas as pd
 import plotly.express as px
 from io import StringIO
 import requests
+import numpy as np
 from sklearn.preprocessing import StandardScaler
 
 from codebase.dashboard_graphs import MaternalHealthDashboard
@@ -87,7 +88,7 @@ if (selected == 'Pregnancy Risk Prediction'):
 
     with col2:
         heartRate = st.text_input('Heart rate in beats per minute')
-    scale_X = StandardScaler()
+    scale_X = pickle.load(open('model/scaler_maternal_model.sav', 'rb'))
     riskLevel=""
     predicted_risk = [0] 
     # creating a button for Prediction
